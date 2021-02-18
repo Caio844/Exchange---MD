@@ -17,6 +17,14 @@ This script can be used to:
 
 ## Usage 
 
+Create paste for logs.
+check the dates that will be used as a parameter : 
+
+$lastDate - variable used so that new users or vacationers for example do not enter the list affected by the script.
+$days - variable used to determine the number of days the script will use to check if the user will receive or lose the NoSync attribute.
+
+Set-ADObject $temp1 -Add @{"extensionAttribute15" = "NoSync"} - it is possible to change the attribute name and the attribute as needed.
+
 ## Parameters 
 
 - **-clear**, checks if users who already have the "NoSync" parameter have accessed AD or exchange.
@@ -25,11 +33,11 @@ This script can be used to:
 
     .\NoSync.ps1 
     
-    adds the "NoSync" parameter to users who do not access AD and Exchange at a specified time.
+adds the "NoSync" parameter to users who do not access AD and Exchange at a specified time.
     
     .\NoSync.ps1 -clear
     
-    adds the "NoSync" parameter to users who have not accessed AD and Exchange for more than 6 months and checks whether users who already have the "NoSync" parameter have accessed AD or exchange at a certain time.
+adds the "NoSync" parameter to users who have not accessed AD and Exchange for more than 6 months and checks whether users who already have the "NoSync" parameter have accessed AD or exchange at a certain time.
     
 ### Credits
 
